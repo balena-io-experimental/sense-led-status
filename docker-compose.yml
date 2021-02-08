@@ -1,0 +1,7 @@
+version '2'
+services:
+# add below to an existing docker-compose:
+  led-status:
+    build: ./led-status
+    restart: always
+    privileged: true
