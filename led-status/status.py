@@ -14,11 +14,11 @@ GPIO.output(37, GPIO.LOW) #red
 GPIO.output(35, GPIO.LOW) #yellow
 GPIO.output(33, GPIO.LOW) #green
 
-r = requests.get('http://sensor')
-y = json.loads(r.text)
-t = y["temperature"]
-
 while True:
+  r = requests.get('http://sensor')
+  y = json.loads(r.text)
+  t = y["temperature"]
+  
   if t < -1:
     print("LED status green.")
     GPIO.output(37, GPIO.LOW)
